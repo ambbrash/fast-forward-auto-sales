@@ -33,18 +33,17 @@ body {
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(255,0,0,0.4);
-  padding: 10px 0; /* remove side padding, use internal container spacing */
+  padding: 10px 0;
 }
 
-/* Use full-width inner container with padding */
 .header-container {
-  width: 90%; /* leaves a little margin on sides */
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* stack items on small screens */
+  flex-direction: column; /* stack logo + button */
   align-items: center;
-  gap: 12px; /* spacing between logo and button */
+  gap: 12px;
 }
 
 /* Logo */
@@ -54,16 +53,18 @@ body {
   object-fit: contain;
 }
 
-/* CTA Button */
+/* CTA Button - full width on mobile */
 .btn-contact {
   background: #e50914;
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 0;
+  width: 100%;      /* full width under logo */
+  max-width: 300px; /* optional, prevents it from being too wide on big phones */
+  text-align: center;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s ease;
-  white-space: nowrap;
 }
 
 /* Tablet and larger screens */
@@ -81,8 +82,9 @@ body {
   }
 
   .btn-contact {
+    width: auto;       /* revert to normal width */
     padding: 8px 18px;
-    font-size: 16px;
+    max-width: none;
   }
 }
 
@@ -92,11 +94,11 @@ body {
     height: 45px;
   }
   .btn-contact {
-    padding: 6px 12px;
+    padding: 8px 0;
     font-size: 13px;
+    max-width: 250px;
   }
 }
-
 
 
 .btn-contact:hover {
