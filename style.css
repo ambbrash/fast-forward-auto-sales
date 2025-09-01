@@ -33,14 +33,18 @@ body {
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(255,0,0,0.4);
-  padding: 10px 15px;
+  padding: 10px 0; /* remove side padding, use internal container spacing */
 }
 
+/* Use full-width inner container with padding */
 .header-container {
+  width: 90%; /* leaves a little margin on sides */
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column; /* stack items on small screens */
   align-items: center;
-  gap: 10px; /* spacing between logo and button */
+  gap: 12px; /* spacing between logo and button */
 }
 
 /* Logo */
@@ -54,16 +58,12 @@ body {
 .btn-contact {
   background: #e50914;
   color: #fff;
-  padding: 8px 18px;
+  padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s ease;
   white-space: nowrap;
-}
-
-.btn-contact:hover {
-  background: #b20710;
 }
 
 /* Tablet and larger screens */
@@ -72,17 +72,16 @@ body {
     flex-direction: row; /* side by side */
     justify-content: space-between;
     align-items: center;
-    padding: 8px 30px;
-    gap: 0; /* reset gap */
+    gap: 0;
+    width: 95%;
   }
 
   .logo img {
     height: 60px;
-    margin: 0;
   }
 
   .btn-contact {
-    padding: 8px 16px;
+    padding: 8px 18px;
     font-size: 16px;
   }
 }
@@ -97,6 +96,7 @@ body {
     font-size: 13px;
   }
 }
+
 
 
 .btn-contact:hover {
