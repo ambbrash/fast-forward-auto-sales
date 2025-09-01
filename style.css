@@ -44,9 +44,12 @@ body {
 
 /* Logo */
 .logo img {
-  height: 50px;
+  height: 60px;
+  max-width: 100%;
   object-fit: contain;
+  margin-left: 10px;
 }
+
 
 /* Contact button */
 .btn-contact {
@@ -57,6 +60,8 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s ease;
+  white-space: nowrap;
+  margin-right: 10px;
 }
 
 .btn-contact:hover {
