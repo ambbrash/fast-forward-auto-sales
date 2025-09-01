@@ -24,7 +24,7 @@ body {
   padding: 40px 20px;
 }
 
-/* Header */
+/* Header - Mobile First */
 .site-header {
   width: 100%;
   background: #000;
@@ -33,36 +33,71 @@ body {
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(255,0,0,0.4);
+  padding: 10px 15px;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* stack items on small screens */
   align-items: center;
-  padding: 8px 30px;
+  gap: 10px; /* spacing between logo and button */
 }
 
 /* Logo */
 .logo img {
-  height: 60px;
+  height: 50px;
   max-width: 100%;
   object-fit: contain;
-  margin-left: 10px;
 }
 
-
-/* Contact button */
+/* CTA Button */
 .btn-contact {
   background: #e50914;
   color: #fff;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s ease;
   white-space: nowrap;
-  margin-right: 10px;
 }
+
+.btn-contact:hover {
+  background: #b20710;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 601px) {
+  .header-container {
+    flex-direction: row; /* side by side */
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 30px;
+    gap: 0; /* reset gap */
+  }
+
+  .logo img {
+    height: 60px;
+    margin: 0;
+  }
+
+  .btn-contact {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 350px) {
+  .logo img {
+    height: 45px;
+  }
+  .btn-contact {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
 
 .btn-contact:hover {
   background: #b20710;
